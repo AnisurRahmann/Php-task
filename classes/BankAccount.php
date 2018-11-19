@@ -20,6 +20,10 @@ class BankAccount implements IfaceBankAccount
         $this->balance = ($this->balance()->value()) + ($amount->value());
         return $this;
     }
+    public function withdraw(Money $amount){
+      $this->balance = ($this->balance()->value()) - ($amount-> value());
+      return $this;
+    }
 
     public function transfer(Money $amount, BankAccount $account)
     {
